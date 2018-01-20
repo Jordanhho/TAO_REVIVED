@@ -57,10 +57,6 @@ public class TileButton extends JPanel
         return this.loc;
     }
 
-    public void selectTile() {
-
-    }
-
     public void Update() {
         if (this.app.getCurrentSelection() != null && this.app.getCurrentSelection().location().equals(this.loc)) {
             this.setBorder(BorderFactory.createLoweredBevelBorder());
