@@ -291,6 +291,7 @@ public class App extends MainFrame
             }
             else if (Board.isValid(new Location(x, y))) {
                 (this.button[x][y] = new TileButton(this, x, y)).addMouseListener(new TileButtonListener(this, new Location(x, y)));
+                this.button[x][y].setBackground(Color.green);
             }
             else {
                 this.button[x][y] = new JPanel();
