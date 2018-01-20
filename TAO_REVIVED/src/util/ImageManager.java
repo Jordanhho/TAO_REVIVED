@@ -264,7 +264,13 @@ public class ImageManager
                 for (int r = (unscaled.getWidth() - realHPBarWidth) / 2, x = 0; x < 2 * r; ++x) {
                     for (int y = 0; y < 2 * r; ++y) {
                         if (Math.abs(x * x + y * y + r * r - 2 * (x + y) * r + barrierWidth) < barrierWidth) {
-                            unscaled.setRGB(x + realHPBarWidth, y, ImageManager.barrierColor);
+                            if(findUnitName(unit).equals("furgon")) {
+                                //TODO temporary bug fix for just ignoring barrier on furgons
+                                //unscaled.setRGB(test_X + hpBar, test_Y, ImageManager.barrierColor);
+                            }
+                            else {
+                                unscaled.setRGB(x + realHPBarWidth, y, ImageManager.barrierColor);
+                            }
                         }
                     }
                 }
@@ -330,5 +336,14 @@ public class ImageManager
     
     private boolean downArrowFunction(final int x, final int y, final int width, final int height) {
         return 2 * x * height - width * y >= 0 && 2 * x * height + y * width <= 2 * width * height;
+    }
+
+    String findUnitName(char unitChar) {
+        for(int i = 0; i < keys.length; i++) {
+            if(keys[i] == unitChar) {
+                return files[i];
+            }
+        }
+        return null;
     }
 }
