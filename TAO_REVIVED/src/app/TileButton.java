@@ -1,7 +1,3 @@
-//
-// Decompiled by Procyon v0.5.30
-//
-
 package app;
 
 import java.util.Iterator;
@@ -57,10 +53,20 @@ public class TileButton extends JPanel
         return this.loc;
     }
 
-    public void selectTile() {
+//<<<<<<< Updated upstream
+//=======
+//    public void highlightTile() {
+//        System.out.println("highlight tile : X" + loc.getX() + "/Y" + loc.getY());
+//        this.setBackground(Color.cyan);
+//    }
+//
+//    public void unHighlightTile() {
+//        //System.out.println("undo tile : X" + loc.getX() + "/Y" + loc.getY());
+//        this.setBackground(new Color(238, 238, 238));
+//    }
 
-    }
 
+    //>>>>>>> Stashed changes
     public void Update() {
         if (this.app.getCurrentSelection() != null && this.app.getCurrentSelection().location().equals(this.loc)) {
             this.setBorder(BorderFactory.createLoweredBevelBorder());
@@ -148,7 +154,7 @@ public class TileButton extends JPanel
                     }
                     final float currentHp = (float)u.hitPoints() / (float)u.baseStats().maxHP;  //Line under updates the icon after attacks or effects
                     this.label.setIcon(this.app.getImageManager().getImageIcon(this.unit.toChar(), this.unit.getPlayer() == this.app.getGame().getPlayer1(), u.direction(), currentHp, this.displayedEffects));
-            }
+                }
                 else {
                     this.displayedDirection = null;
                     this.displayedHP = -1;
