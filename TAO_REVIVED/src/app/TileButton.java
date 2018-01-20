@@ -1,7 +1,3 @@
-//
-// Decompiled by Procyon v0.5.30
-//
-
 package app;
 
 import java.util.Iterator;
@@ -57,6 +53,20 @@ public class TileButton extends JPanel
         return this.loc;
     }
 
+//<<<<<<< Updated upstream
+//=======
+//    public void highlightTile() {
+//        System.out.println("highlight tile : X" + loc.getX() + "/Y" + loc.getY());
+//        this.setBackground(Color.cyan);
+//    }
+//
+//    public void unHighlightTile() {
+//        //System.out.println("undo tile : X" + loc.getX() + "/Y" + loc.getY());
+//        this.setBackground(new Color(238, 238, 238));
+//    }
+
+
+//>>>>>>> Stashed changes
     public void Update() {
         if (this.app.getCurrentSelection() != null && this.app.getCurrentSelection().location().equals(this.loc)) {
             this.setBorder(BorderFactory.createLoweredBevelBorder());

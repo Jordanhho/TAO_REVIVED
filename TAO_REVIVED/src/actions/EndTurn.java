@@ -1,7 +1,3 @@
-// 
-// Decompiled by Procyon v0.5.30
-// 
-
 package actions;
 
 import units.BasicUnit;
@@ -9,8 +5,7 @@ import app.App;
 
 public class EndTurn implements Action
 {
-    public void act(final App app) {
-    }
+    public boolean act(final App app) { return false; }
     
     public boolean isValid() {
         return true;
@@ -20,9 +15,7 @@ public class EndTurn implements Action
         return true;
     }
     
-    public boolean isAttack() {
-        return false;
-    }
+    public boolean isAttack() { return false; }
     
     public boolean isMove() {
         return false;
@@ -37,6 +30,6 @@ public class EndTurn implements Action
     }
     
     public boolean equals(final Object other) {
-        return other instanceof EndTurn && this.toString() == other.toString();
+        return other instanceof EndTurn && this.toString().equals(other.toString());
     }
 }

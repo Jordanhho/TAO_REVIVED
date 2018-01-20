@@ -1,7 +1,3 @@
-// 
-// Decompiled by Procyon v0.5.30
-// 
-
 package actions;
 
 import java.util.Iterator;
@@ -42,13 +38,13 @@ public class Attack implements Action
         return unit != null && unit instanceof BasicUnit && this.unit().canAttack(this.target);
     }
     
-    public void act(final App app) {
+    public boolean act(final App app) {
         if (!this.isValid()) {
             throw new IllegalArgumentException("Can't perform invalid action");
         }
         final BasicUnit unit = (BasicUnit)this.theBoard.unitAt(this.loc);
         this.blockingInfo.setApp(app);
-        unit.Attack(this.target, this.blockingInfo);
+        return unit.Attack(this.target, this.blockingInfo); //cancel attack or not
     }
     
     public boolean endsTurn() {

@@ -1,7 +1,3 @@
-// 
-// Decompiled by Procyon v0.5.30
-// 
-
 package game;
 
 import actions.Turn;
@@ -194,7 +190,11 @@ public class Game
         if (action.unit() != null) {
             this.acting = action.unit();
         }
-        action.act(this.app);
+        boolean cancelled = action.act(this.app);
+
+        if(cancelled) { //cancel move
+            return;
+        }
         if (action.isMove()) {
             this.canMove = false;
         }

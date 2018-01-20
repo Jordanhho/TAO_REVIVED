@@ -1,7 +1,3 @@
-// 
-// Decompiled by Procyon v0.5.30
-// 
-
 package game;
 
 import java.awt.Component;
@@ -79,7 +75,21 @@ public class BlockingInfo
             this.index = 0;
         }
     }
-    
+
+    public boolean showAttackBlockingInfo(double percentBlock, final Location loc) {
+        if (this.attack[this.index] == 0) {
+            ++this.index;
+            return false;
+        }
+        if (this.attack[this.index] == 1) {
+            ++this.index;
+            return true;
+        }
+        percentBlock = Math.round(percentBlock * 10.0) / 10.0;
+        int result = JOptionPane.showConfirmDialog(this.app, "Blocking Chance: (" + percentBlock + "%)" + " Do you wish to Attack?", "Blocking Manager", 0, 3);
+        return (result == 0);
+    }
+
     public boolean block(double percentBlock, final Location loc) {
         if (this.attack[this.index] == 0) {
             ++this.index;
@@ -98,8 +108,7 @@ public class BlockingInfo
         else {
             this.app.UpdateTiles();
             this.app.getButton(loc.getX(), loc.getY()).setBackground(new Color(200, 100, 100));
-            int result;
-            for (result = -1; result == -1; result = JOptionPane.showConfirmDialog(this.app, "Is the attack blocked? (" + percentBlock + "%)", "Blocking Manager", 0, 3)) {}
+            int result = JOptionPane.showConfirmDialog(this.app, "Is the attack blocked? (" + percentBlock + "%)", "Blocking Manager", 0, 3);
             blocked = (result == 0);
         }
         if (this.attack[this.index] == -1) {
@@ -116,4 +125,8 @@ public class BlockingInfo
         ++this.index;
         return blocked;
     }
+
+
+
+
 }
