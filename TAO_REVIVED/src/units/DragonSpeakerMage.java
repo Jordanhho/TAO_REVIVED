@@ -73,7 +73,7 @@ public class DragonSpeakerMage extends BasicUnit
         for (final Location x : list) {
             final Unit unit = this.getPlayer().getBoard().unitAt(x);
             if (unit != null ) {
-                if(unit.baseStats().getName() != "Shrub") {
+                if(!unit.baseStats().getName().equals("Shrub")) {
                     final BasicUnit target = (BasicUnit)unit;
                     target.attacked(this.power());
                 }
