@@ -1,6 +1,6 @@
-// 
+//
 // Decompiled by Procyon v0.5.30
-// 
+//
 
 package util;
 
@@ -45,7 +45,7 @@ public class ImageManager
     private HashMap<Character, BufferedImage> mapOthers;
     private float hue1;
     private float hue2;
-    
+
     static {
         keys = new char[] { 'C', 'K', 'S', 'L', 'b', 'W', 'E', 'A', 'P', 'D', 'M', 'G', 'f', 's', 'T', 'Z', 'B', 'p', 'F' };
         files = new String[] { "cleric", "knight", "scout", "lightningward", "barrierward", "darkmagicwitch", "enchantress", "assassin", "pyromancer", "dragonspeakermage", "mudgolem", "golemambusher", "frostgolem", "stonegolem", "dragontyrant", "berserker", "beastrider", "poisonwisp", "furgon" };
@@ -60,11 +60,11 @@ public class ImageManager
         paralysisColor = Color.CYAN.darker().getRGB();
         instance = new ImageManager();
     }
-    
+
     public static ImageManager getInstance() {
         return ImageManager.instance;
     }
-    
+
     private ImageManager() {
         this.mapOthers = new HashMap<Character, BufferedImage>();
         this.mapPlayer1 = new HashMap<Character, BufferedImage>();
@@ -73,7 +73,7 @@ public class ImageManager
         this.hue2 = 0.67f;
         this.initialize();
     }
-    
+
     private void initialize() {
         this.mapOthers.clear();
         this.mapPlayer1.clear();
@@ -141,18 +141,18 @@ public class ImageManager
             }
         }
     }
-    
+
     public ImageIcon getImageIcon(final char unit, final boolean player1, final Direction dir) {
         final Image scaled = this.getImage(unit, player1, dir).getScaledInstance(53, 50, 4);
         return new ImageIcon(scaled);
     }
-    
+
     public ImageIcon getImageIcon(final char unit, final boolean player1, final Direction dir, final float hp, final Set<Effect> effects) {
         final BufferedImage bi = this.getImage(unit, player1, dir, hp, effects);
         final Image scaled = bi.getScaledInstance(53, 50, 4);
         return new ImageIcon(scaled);
     }
-    
+
     public BufferedImage getImage(final char unit, final boolean player1, final Direction dir) {
         BufferedImage image;
         if (!this.mapOthers.containsKey(unit)) {
@@ -231,7 +231,7 @@ public class ImageManager
         }
         return unscaled;
     }
-    
+
     public BufferedImage getImage(final char unit, final boolean player1, final Direction dir, final float hp, final Set<Effect> effects) {
         final BufferedImage unscaled = this.getImage(unit, player1, dir);
         BufferedImage image;
@@ -321,24 +321,24 @@ public class ImageManager
         }
         return unscaled;
     }
-    
+
     private boolean leftArrowFunction(final int x, final int y, final int width, final int height) {
         return 2 * y * width + x * height >= width * height && 2 * y * width - x * height <= width * height;
     }
-    
+
     private boolean rightArrowFunction(final int x, final int y, final int width, final int height) {
         return 2 * y * width - x * height >= 0 && 2 * y * width + x * height <= 2 * width * height;
     }
-    
+
     private boolean upArrowFunction(final int x, final int y, final int width, final int height) {
         return y * width + 2 * x * height >= width * height && 2 * x * height - y * width <= width * height;
     }
-    
+
     private boolean downArrowFunction(final int x, final int y, final int width, final int height) {
         return 2 * x * height - width * y >= 0 && 2 * x * height + y * width <= 2 * width * height;
     }
 
-    String findUnitName(char unitChar) {
+    private String findUnitName(char unitChar) {
         for(int i = 0; i < keys.length; i++) {
             if(keys[i] == unitChar) {
                 return files[i];
