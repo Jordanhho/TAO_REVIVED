@@ -58,12 +58,8 @@ public class Board
             }
             if(!dragonSpeakInit && u instanceof DragonSpeakerMage) {
                 ((BasicUnit)u).init();
-                System.out.println("init dragonSpeak!");
                 dragonSpeakInit = true;
             }
-//            if (u instanceof BasicUnit) {
-//                ((BasicUnit)u).init();
-//            }
         }
         for (final Unit u : this.units) {
             if (u instanceof BasicUnit) {
@@ -99,11 +95,6 @@ public class Board
                 if(!(u instanceof DragonSpeakerMage)) {
                     ((BasicUnit)u).init();
                 }
-//                if(!dragonSpeakInit && u instanceof DragonSpeakerMage) {
-//                    ((BasicUnit)u).init();
-//                    System.out.println("init dragonSpeak!");
-//                    dragonSpeakInit = true;
-//                }
           }
         }
         for (final Unit u : this.units) {
