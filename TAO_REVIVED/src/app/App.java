@@ -787,7 +787,7 @@ public class App extends MainFrame
                             this.getEndTurn().setEnabled(true);
                             break Label_1543;
                         }
-                        case 6: {
+                        case 6: { //case of changing directions
                             if (this.game.canMove()) {
                                 this.getMove().setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                             }

@@ -750,18 +750,22 @@ public abstract class BasicUnit implements Unit
             }
         }
         final boolean hit = blocking < 100.0 && (blocking <= 0.0 || !info.block(blocking, this.location()));
-        if (!hit) {
+        if (!hit) {  //blocked attack
             if (blockingChange) {
-                if (this.dir.equals(dir) || !this.mobile()) {
-                    this.blockingBonus -= 100 - this.stats.blocking;
-                }
-                else if (!this.dir.equals(dir.rotateHalfTurn())) {
-                    this.blockingBonus -= 200 - this.stats.blocking;
-                }
-                this.dir = dir;
+                    //changing direction of barrier ward to last blocked attack's location of attacker
+                    if (this.dir.equals(dir) || !this.mobile()) {
+                        this.blockingBonus -= 100 - this.stats.blocking;
+                    }
+                    else if (!this.dir.equals(dir.rotateHalfTurn())) {
+                        this.blockingBonus -= 200 - this.stats.blocking;
+                    }
+                    if(this.baseStats() != null && !this.baseStats().getName().equals("Barrier Ward")) {
+                        this.dir = dir;  //change direction only when it isnt a ward
+                    }
             }
             return false;
         }
+        //attack is not blocked
         if (blockingChange && !this.dir.equals(dir.rotateHalfTurn())) {
             this.blockingBonus += this.stats.blocking;
         }
