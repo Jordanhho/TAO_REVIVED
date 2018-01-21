@@ -20,11 +20,6 @@ public class Board
     private ArrayList<Unit> units;
     private Player player1;
     private Player player2;
-    private boolean dragonSpeakInit = false;
-
-    public boolean isDragonSpeakInit() {
-        return dragonSpeakInit;
-    }
 
     public Iterator<Unit> iterator() {
         return this.units.iterator();
@@ -52,13 +47,25 @@ public class Board
             final BasicUnit unit = BasicUnit.GenerateUnit(s2.get(loc), p2, Setup.mirror(loc));
             this.units.add(unit);
         }
+        boolean player1DSMInit = false;
+        boolean player2DSMInit = false;
         for (final Unit u : this.units) {
             if(!(u instanceof DragonSpeakerMage)) {
                 ((BasicUnit)u).init();
             }
-            if(!dragonSpeakInit && u instanceof DragonSpeakerMage) {
-                ((BasicUnit)u).init();
-                dragonSpeakInit = true;
+            if(u instanceof DragonSpeakerMage) {
+                if(!player1DSMInit) { //init dragon speak effect for player 1
+                    if(u.getPlayer() == this.player1) {
+                        player1DSMInit = true;
+                        ((BasicUnit)u).init();
+                    }
+                }
+                if(!player2DSMInit) { //init dragon speak effect for player 2
+                    if(u.getPlayer() == this.player2) {
+                        player2DSMInit = true;
+                        ((BasicUnit)u).init();
+                    }
+                }
             }
         }
         for (final Unit u : this.units) {
@@ -76,7 +83,7 @@ public class Board
         this.units.add(u);
     }
     
-    public void toBeginning() {
+    public void toBeginning() {  //refreshes constructor after undo is pressed
         final Setup s1 = this.player1.getSetup();
         final Setup s2 = this.player2.getSetup();
         this.units = new ArrayList<Unit>();
@@ -90,12 +97,28 @@ public class Board
             final BasicUnit unit = BasicUnit.GenerateUnit(s2.get(loc), this.player2, Setup.mirror(loc));
             this.units.add(unit);
         }
+        boolean player1DSMInit = false;
+        boolean player2DSMInit = false;
         for (final Unit u : this.units) {
             if (u instanceof BasicUnit) {
                 if(!(u instanceof DragonSpeakerMage)) {
                     ((BasicUnit)u).init();
                 }
-          }
+                if(u instanceof DragonSpeakerMage) {
+                    if(!player1DSMInit) { //init dragon speak effect for player 1
+                        if(u.getPlayer() == this.player1) {
+                            player1DSMInit = true;
+                            ((BasicUnit)u).init();
+                        }
+                    }
+                    if(!player2DSMInit) { //init dragon speak effect for player 2
+                        if(u.getPlayer() == this.player2) {
+                            player2DSMInit = true;
+                            ((BasicUnit)u).init();
+                        }
+                    }
+                }
+            }
         }
         for (final Unit u : this.units) {
             if (u instanceof BasicUnit) {
@@ -155,5 +178,14 @@ public class Board
     
     public void remove(final Unit unit) {
         this.units.remove(unit);
+    }
+
+    public boolean findUnitOnBoard(String unitName, Player owner) {
+        for(Unit u: units) {
+            if(u.baseStats().getName().equals(unitName) && owner.ID().equals(u.getPlayer().ID())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
