@@ -13,7 +13,8 @@ import game.Player;
 public class Berserker extends BasicUnit
 {
     public Berserker(final Player owner, final Location loc) {
-        super(new BaseStats("Berserker", 42, 22, 0, 25, 1, 3, false, false), owner, loc);
+        //super(new BaseStats("Berserker", 42, 22, 0, 25, 1, 3, false, false), owner, loc); //default stats
+        super(new BaseStats("Berserker", 40, 20, 16, 25, 1, 3, false, false), owner, loc);
     }
     
     public ArrayList<Location> affectedByAttack(final Location loc) {

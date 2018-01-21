@@ -13,7 +13,8 @@ import game.Player;
 public class GolemAmbusher extends BasicUnit
 {
     public GolemAmbusher(final Player owner, final Location loc) {
-        super(new BaseStats("Golem Ambusher", 60, 20, 0, 0, 3, 2, true, false), owner, loc);
+        // super(new BaseStats("Golem Ambusher", 60, 20, 0, 0, 3, 2, true, false), owner, loc); default stats
+        super(new BaseStats("Golem Ambusher", 60, 20, 0, 0, 2, 2, true, false), owner, loc);
     }
     
     public ArrayList<Location> affectedByAttack(final Location loc) {
@@ -34,7 +35,8 @@ public class GolemAmbusher extends BasicUnit
     }
     
     protected boolean canattack(final Location loc) {
-        return Board.distance(loc, this.location()) == 4 || Board.distance(loc, this.location()) == 5;
+        //default range attack:   Board.distance(loc, this.location()) == 4 || Board.distance(loc, this.location()) == 5;
+        return Board.distance(loc, this.location()) == 2 || Board.distance(loc, this.location()) == 3 || Board.distance(loc, this.location()) == 4;
     }
     
     public boolean initialRecoveryExemption() {

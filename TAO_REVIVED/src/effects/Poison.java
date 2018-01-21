@@ -6,9 +6,9 @@ package effects;
 
 import units.BasicUnit;
 
-public class Poison extends Effect
+public class Poison extends Effect //effect for poison wisp
 {
-    public static final int DAMAGE = 4;
+    public static final int DAMAGE = 5; //used to be 5
     private boolean firstTurn;
     
     public Poison(final BasicUnit unit) {

@@ -79,6 +79,7 @@ public class MudGolem extends BasicUnit
     }
     
     protected boolean canattack(final Location loc) {
+        //default attk range: return Board.distance(this.location(), loc) == 1 || (this.location().equals(loc) && this.isOnlyOnField());
         return Board.distance(this.location(), loc) == 1 || (this.location().equals(loc) && this.isOnlyOnField());
     }
     

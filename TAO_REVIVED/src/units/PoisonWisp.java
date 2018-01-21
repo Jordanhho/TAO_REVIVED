@@ -17,7 +17,8 @@ import game.Player;
 public class PoisonWisp extends BasicUnit
 {
     public PoisonWisp(final Player owner, final Location loc) {
-        super(new BaseStats("Poison Wisp", 30, 0, 0, 0, 2, 6, true, true), owner, loc);
+        //super(new BaseStats("Poison Wisp", 30, 0, 0, 0, 2, 6, true, true), owner, loc); default
+        super(new BaseStats("Poison Wisp", 34, 0, 0, 0, 2, 5, true, true), owner, loc);
     }
     
     public ArrayList<Location> affectedByAttack(final Location loc) {

@@ -1,5 +1,9 @@
 package units;
 
+import effects.Barrier;
+import effects.Effect;
+import effects.Paralyze;
+import effects.Poison;
 import game.BlockingInfo;
 import game.Board;
 import game.Player;
@@ -7,20 +11,26 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import util.Location;
 
-
-
+import javax.swing.*;
 
 
 public class Furgon
         extends BasicUnit
 {
+    /*
+    default stats:
     private static final BaseStats DEFAULT = new BaseStats("Furgon", 48, 0, 0, 50, 1, 3, true, false);
     private static final BaseStats EXHAUSTED = new BaseStats("Exhausted Furgon", 48, 0, 0, 0, 12, 3, true, false);
     private static final BaseStats ENRAGED = new BaseStats("Enraged Furgon", 48, 0, 0, 50, 1, 3, true, false);
+     */
+    private static final BaseStats DEFAULT = new BaseStats("Furgon", 72, 0, 0, 0, 1, 3, true, false);
+    private static final BaseStats EXHAUSTED = new BaseStats("Exhausted Furgon", 72, 0, 0, 0, 12, 3, true, false);
+    private static final BaseStats ENRAGED = new BaseStats("Enraged Furgon", 72, 0, 0, 0, 2, 3, true, false); //now lasts 2 turns
 
     public Furgon(Player owner, Location loc)
     {
-        super(new BaseStats("Furgon", 48, 0, 0, 50, 1, 3, true, false), owner, loc);
+        //super(new BaseStats("Furgon", 48, 0, 0, 50, 1, 3, true, false), owner, loc); default
+        super(new BaseStats("Furgon", 72, 0, 0, 0, 1, 3, true, false), owner, loc);
     }
 
 
@@ -35,8 +45,6 @@ public class Furgon
         Location f3 = new Location(location().getX(), location().getY() + 1);
         Location f4 = new Location(location().getX(), location().getY() - 1);
 
-
-
         boolean enraged = baseStats() == ENRAGED;
 
         boolean surrounded = false;
@@ -44,7 +52,6 @@ public class Furgon
         Board b = getPlayer().getBoard();
         if (enraged)
         {
-
             surrounded = (Board.isValid(f1)) &&
                     (Board.isValid(f2)) &&
                     (Board.isValid(f3)) &&
@@ -54,7 +61,6 @@ public class Furgon
                     ((b.unitAt(f3) instanceof Shrub)) &&
                     ((b.unitAt(f4) instanceof Shrub));
         }
-
         if (surrounded)
         {
             Iterator<Unit> itr = getPlayer().getBoard().iterator();
@@ -110,6 +116,55 @@ public class Furgon
         return list;
     }
 
+    private boolean isSurrounded(Board b, Location f1, Location f2, Location f3, Location f4) {
+
+        boolean surrounded = false;
+        if((Board.isValid(f1)) && //if surrounded by all shrubs
+                (Board.isValid(f2)) &&
+                (Board.isValid(f3)) &&
+                (Board.isValid(f4)) &&
+                ((b.unitAt(f1) instanceof Shrub)) &&
+                ((b.unitAt(f2) instanceof Shrub)) &&
+                ((b.unitAt(f3) instanceof Shrub)) &&
+                ((b.unitAt(f4) instanceof Shrub))) {
+            surrounded = true;
+        }
+        else { //if surrounded by a combination of shrubs and board boarder
+            int numSurroundedBy = 4;
+            int currentNumSurrounded = 0;
+
+            //adding all invalid blocks (edge borders)
+            if(!Board.isValid(f1)) {
+                currentNumSurrounded++;
+            }
+            if(!Board.isValid(f2)) {
+                currentNumSurrounded++;
+            }
+            if(!Board.isValid(f3)) {
+                currentNumSurrounded++;
+            }
+            if(!Board.isValid(f4)) {
+                currentNumSurrounded++;
+            }
+            //adding all shrubs surround
+            if((b.unitAt(f1) instanceof Shrub)) {
+                currentNumSurrounded++;
+            }
+            if((b.unitAt(f2) instanceof Shrub)) {
+                currentNumSurrounded++;
+            }
+            if((b.unitAt(f3) instanceof Shrub)) {
+                currentNumSurrounded++;
+            }
+            if((b.unitAt(f4) instanceof Shrub)) {
+                currentNumSurrounded++;
+            }
+            if(currentNumSurrounded == 4) {  //if surrounded by 4 of the above options, return true
+                surrounded = true;
+            }
+        }
+        return surrounded;
+    }
 
     protected void attack(Location loc, BlockingInfo info)
     {
@@ -122,7 +177,6 @@ public class Furgon
                 getPlayer().getBoard().add(new Shrub(x, this));
             }
         }
-
         Location f1 = new Location(location().getX() + 1, location().getY());
         Location f2 = new Location(location().getX() - 1, location().getY());
         Location f3 = new Location(location().getX(), location().getY() + 1);
@@ -134,16 +188,17 @@ public class Furgon
         boolean enraged = baseStats() == ENRAGED;
         if (enraged)
         {
-            surrounded = (Board.isValid(f1)) &&
-                    (Board.isValid(f2)) &&
-                    (Board.isValid(f3)) &&
-                    (Board.isValid(f4)) &&
-                    ((b.unitAt(f1) instanceof Shrub)) &&
-                    ((b.unitAt(f2) instanceof Shrub)) &&
-                    ((b.unitAt(f3) instanceof Shrub)) &&
-                    ((b.unitAt(f4) instanceof Shrub));
-        }
+            surrounded = isSurrounded(b, f1, f2, f3, f4);
 
+//            surrounded = (Board.isValid(f1)) &&
+//                    (Board.isValid(f2)) &&
+//                    (Board.isValid(f3)) &&
+//                    (Board.isValid(f4)) &&
+//                    ((b.unitAt(f1) instanceof Shrub)) &&
+//                    ((b.unitAt(f2) instanceof Shrub)) &&
+//                    ((b.unitAt(f3) instanceof Shrub)) &&
+//                    ((b.unitAt(f4) instanceof Shrub));
+        }
         if (surrounded)
         {
             setBaseStats(EXHAUSTED);
@@ -163,14 +218,16 @@ public class Furgon
         Board b = getPlayer().getBoard();
         if (enraged)
         {
-            surrounded = (Board.isValid(f1)) &&
-                    (Board.isValid(f2)) &&
-                    (Board.isValid(f3)) &&
-                    (Board.isValid(f4)) &&
-                    ((b.unitAt(f1) instanceof Shrub)) &&
-                    ((b.unitAt(f2) instanceof Shrub)) &&
-                    ((b.unitAt(f3) instanceof Shrub)) &&
-                    ((b.unitAt(f4) instanceof Shrub));
+            surrounded = isSurrounded(b, f1, f2, f3, f4);
+
+//            surrounded = (Board.isValid(f1)) &&
+//                    (Board.isValid(f2)) &&
+//                    (Board.isValid(f3)) &&
+//                    (Board.isValid(f4)) &&
+//                    ((b.unitAt(f1) instanceof Shrub)) &&
+//                    ((b.unitAt(f2) instanceof Shrub)) &&
+//                    ((b.unitAt(f3) instanceof Shrub)) &&
+//                    ((b.unitAt(f4) instanceof Shrub));
         }
 
         if (surrounded)
@@ -204,6 +261,15 @@ public class Furgon
         return false;
     }
 
+    private void removeFocusEffectsOnEnraged() {
+        for(Effect e: this.getEffects()) {
+            if(e instanceof Paralyze || e instanceof  Poison || e instanceof  Barrier) {
+                this.removeEffect(e);
+            }
+        }
+    }
+
+
     public void onEndTurn(Player p)
     {
         super.onEndTurn(p);
@@ -217,6 +283,7 @@ public class Furgon
     public void onMobileAllyDeath() {
         setRecovery(0);
         setBaseStats(ENRAGED);
+        removeFocusEffectsOnEnraged();
     }
 
     public boolean initialRecoveryExemption()
