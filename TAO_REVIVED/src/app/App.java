@@ -1,3 +1,7 @@
+// 
+// Decompiled by Procyon v0.5.30
+// 
+
 package app;
 
 import game.Setup;
@@ -56,7 +60,6 @@ public class App extends MainFrame
     public static final int ATTACK = 5;
     public static final int ROTATE = 6;
     public static final int NONE = 7;
-    //private Location prevHighlightTile;
     private static final long serialVersionUID = 1L;
     private JComponent[][] button;
     private RotationDialog rotationDialog;
@@ -233,7 +236,6 @@ public class App extends MainFrame
     }
     
     public App() {
-        //this.prevHighlightTile = new Location(0,0);
         this.button = new JComponent[11][11];
         this.rotationDialog = null;
         this.currentSelection = null;
@@ -323,7 +325,6 @@ public class App extends MainFrame
     }
     
     public void UpdateTiles() {
-        Location prevLoc = new Location(0, 0);
         for (int x = 10; x >= 0; --x) {
             for (int y = 0; y < 11; ++y) {
                 if (this.getButton(x, y) instanceof TileButton) {
@@ -770,13 +771,12 @@ public class App extends MainFrame
                             this.getEndTurn().setEnabled(true);
                             break Label_1543;
                         }
-                        case 5: {
+                        case 5: {  //case of attacking
+                            if (!this.game.canAttack()) {
+                                throw new IllegalArgumentException("Can't attack");
+                            }
                             if (this.game.canMove()) {
                                 this.getMove().setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-                            }
-                            if (!this.game.canAttack()) {
-                                System.out.println("can't attack!");
-                                //throw new IllegalArgumentException("Can't attack");
                             }
                             else {
                                 this.getMove().setEnabled(false);
@@ -902,26 +902,8 @@ public class App extends MainFrame
             }
         }
     }
-
-
-//    public void UpdateMouseHoverHighlight() {
-//        final Location loc = ((TileButtonListener) this.getButton(0, 2).getMouseListeners()[0]).getMouseLocation();
-//        if (loc != null) {
-//            if (this.getButton(loc.getX(), loc.getY()) instanceof TileButton) {
-//                System.out.println("UPDATER current mouse location: X" + loc.getX() + "/Y" + loc.getY());
-//                this.button[prevHighlightTile.getX()][prevHighlightTile.getY()].setBackground(new Color(238, 238, 238));
-//                prevHighlightTile.setLocation(loc.getX(), loc.getY());
-//                this.button[loc.getX()][loc.getY()].setBackground(Color.cyan);
-//                this.UpdateGui();
-////                this.UpdateButtons();
-////                this.UpdateTiles();
-//            }
-//        }
-//    }
-
-
+    
     public void UpdateTextPanel() {
-        //UpdateMouseHoverHighlight();
         if (this.game != null) {
             final Location loc = ((TileButtonListener)this.getButton(0, 2).getMouseListeners()[0]).getMouseLocation();
             if (loc != null) {
