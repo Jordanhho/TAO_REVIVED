@@ -184,32 +184,35 @@ public class Game
     }
     
     public void Play(final Action action) {
-        if (!this.canPlay(action)) {
-            throw new IllegalArgumentException("Illegal action: " + action);
-        }
-        if (action.unit() != null) {
-            this.acting = action.unit();
-        }
-        boolean cancelled = action.act(this.app);
-
-        if(cancelled) { //cancel move
-            return;
-        }
-        if (action.isMove()) {
-            this.canMove = false;
-        }
-        if (action.isAttack()) {
-            this.canAttack = false;
-        }
-        for (final Unit next : this.theBoard.getUnits()) {
-            if (next instanceof BasicUnit) {
-                ((BasicUnit)next).onEndRound();
+        Cancceled : { //goes back to this line if cancelled block
+            if (!this.canPlay(action)) {
+                throw new IllegalArgumentException("Illegal action: " + action);
             }
+            if (action.unit() != null) {
+                this.acting = action.unit();
+            }
+            boolean cancelled = action.act(this.app);
+
+            if(cancelled) { //cancel move
+                break Cancceled;
+            }
+            if (action.isMove()) {
+                this.canMove = false;
+            }
+            if (action.isAttack()) {
+                this.canAttack = false;
+            }
+            for (final Unit next : this.theBoard.getUnits()) {
+                if (next instanceof BasicUnit) {
+                    ((BasicUnit)next).onEndRound();
+                }
+            }
+            if (action.endsTurn()) {
+                this.NextTurn();
+            }
+            this.actions = this.actions.Add(action);
         }
-        if (action.endsTurn()) {
-            this.NextTurn();
-        }
-        this.actions = this.actions.Add(action);
+
 }
     
     public boolean hasMoves(final BasicUnit unit) {

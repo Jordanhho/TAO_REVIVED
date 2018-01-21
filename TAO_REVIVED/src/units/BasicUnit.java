@@ -597,7 +597,7 @@ public abstract class BasicUnit implements Unit
         return false;
     }
 
-    public boolean checkBlockingInfo(final Location loc, final BlockingInfo info) {
+    public boolean checkBlockingInfo(final Location loc, final BlockingInfo info) {  //popups with if you want to attack or not
         final Unit target = this.getPlayer().getBoard().unitAt(loc);
 
         double blockingPercent = getTargetBlockingInfo(target.baseStats().power, loc, info);
