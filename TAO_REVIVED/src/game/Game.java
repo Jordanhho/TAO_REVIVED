@@ -184,7 +184,8 @@ public class Game
     }
     
     public void Play(final Action action) {
-        Cancceled : { //goes back to this line if cancelled block
+        //Cancceled : { //goes back to this line if cancelled block
+//            System.out.println("new action");
             if (!this.canPlay(action)) {
                 throw new IllegalArgumentException("Illegal action: " + action);
             }
@@ -193,9 +194,11 @@ public class Game
             }
             boolean cancelled = action.act(this.app);
 
-            if(cancelled) { //cancel move
-                break Cancceled;
-            }
+//            if(cancelled) { //cancel move
+//                System.out.println("canceled attack, going back up!");
+//                break Cancceled;
+//            }
+
             if (action.isMove()) {
                 this.canMove = false;
             }
@@ -211,9 +214,9 @@ public class Game
                 this.NextTurn();
             }
             this.actions = this.actions.Add(action);
-        }
+      //  }
 
-}
+    }
     
     public boolean hasMoves(final BasicUnit unit) {
         if (!this.canMove) {

@@ -587,13 +587,13 @@ public abstract class BasicUnit implements Unit
         if (!this.canAttack(loc)) {
             throw new IllegalStateException("Cannot attack location " + loc);
         }
-        if(!this.checkBlockingInfo(loc, blockingInfo)) { //checks if you want to block or not
+        //if(!this.checkBlockingInfo(loc, blockingInfo)) { //checks if you want to block or not
             for (final Effect e : this.effects) {
                 e.onAttack();
                 return true;
             }
-        }
-        System.out.println("Cancelled Attack");
+       // }
+       // System.out.println("Cancelled Attack");
         return false;
     }
 
