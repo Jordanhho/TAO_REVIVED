@@ -150,10 +150,6 @@ public class Furgon
         }
     }
 
-
-
-
-
     protected boolean canattack(Location loc)
     {
         Location f1 = new Location(location().getX() + 1, location().getY());
@@ -176,8 +172,6 @@ public class Furgon
                     ((b.unitAt(f3) instanceof Shrub)) &&
                     ((b.unitAt(f4) instanceof Shrub));
         }
-
-
 
         if (surrounded)
             return location().equals(loc);
