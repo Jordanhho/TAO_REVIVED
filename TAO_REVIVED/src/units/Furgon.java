@@ -150,10 +150,6 @@ public class Furgon
         }
     }
 
-
-
-
-
     protected boolean canattack(Location loc)
     {
         Location f1 = new Location(location().getX() + 1, location().getY());
@@ -176,8 +172,6 @@ public class Furgon
                     ((b.unitAt(f3) instanceof Shrub)) &&
                     ((b.unitAt(f4) instanceof Shrub));
         }
-
-
 
         if (surrounded)
             return location().equals(loc);
@@ -232,7 +226,7 @@ public class Furgon
 
     public int maxNum()
     {
-        return 1;
+        return 0;
     }
 
     public String toAbrev()

@@ -1,7 +1,3 @@
-// 
-// Decompiled by Procyon v0.5.30
-// 
-
 package app;
 
 import java.util.Iterator;
@@ -35,7 +31,7 @@ public class TileButton extends JPanel
     private int displayedHP;
     private JLabel label;
     private HashSet<Effect> displayedEffects;
-    
+
     public TileButton(final App app, final int x, final int y) {
         this.app = app;
         this.loc = new Location(x, y);
@@ -52,11 +48,11 @@ public class TileButton extends JPanel
         this.addKeyListener(app.getKeyListener());
         this.setBorder(BorderFactory.createLineBorder(Color.CYAN, 3));
     }
-    
+
     public Location getLoc() {
         return this.loc;
     }
-    
+
     public void Update() {
         if (this.app.getCurrentSelection() != null && this.app.getCurrentSelection().location().equals(this.loc)) {
             this.setBorder(BorderFactory.createLoweredBevelBorder());
@@ -107,7 +103,7 @@ public class TileButton extends JPanel
                 return;
             }
         }
-        if (this.unit != null) {
+        if (this.unit != null) {  //ie empty tile
             boolean sameDirection = true;
             boolean sameHP = true;
             boolean sameEffects = true;
@@ -132,16 +128,18 @@ public class TileButton extends JPanel
                     }
                 }
             }
-            if (this.displayedUnit != this.unit.toChar() || !sameDirection || !sameHP || !sameEffects) {
+            if (this.displayedUnit != this.unit.toChar() || !sameDirection || !sameHP || !sameEffects) {  //the unit update
                 if (this.unit instanceof BasicUnit) {
                     final BasicUnit u = (BasicUnit)this.unit;
                     this.displayedDirection = u.direction();
+
                     this.displayedHP = u.hitPoints();
                     this.displayedEffects.clear();
                     for (final Effect e : ((BasicUnit)this.unit).getEffects()) {
                         this.displayedEffects.add(e);
                     }
-                    this.label.setIcon(this.app.getImageManager().getImageIcon(this.unit.toChar(), this.unit.getPlayer() == this.app.getGame().getPlayer1(), u.direction(), u.hitPoints() / u.baseStats().maxHP, this.displayedEffects));
+                    final float currentHp = (float)u.hitPoints() / (float)u.baseStats().maxHP;  //Line under updates the icon after attacks or effects
+                    this.label.setIcon(this.app.getImageManager().getImageIcon(this.unit.toChar(), this.unit.getPlayer() == this.app.getGame().getPlayer1(), u.direction(), currentHp, this.displayedEffects));
                 }
                 else {
                     this.displayedDirection = null;
@@ -151,7 +149,7 @@ public class TileButton extends JPanel
                 this.displayedUnit = this.unit.toChar();
             }
         }
-        else if (this.setupUnit != ' ') {
+        else if (this.setupUnit != ' ') {    //setting up in the beginning for unit drag and drop
             if (this.displayedUnit != this.setupUnit) {
                 this.label.setIcon(this.app.getImageManager().getImageIcon(this.setupUnit, Setup.isValid(this.loc), null));
                 this.displayedUnit = this.setupUnit;

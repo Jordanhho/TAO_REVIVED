@@ -247,7 +247,7 @@ public class App extends MainFrame
         this.currentFile = null;
         this.initialize();
     }
-    
+
     private void initialize() {
         this.iManager = ImageManager.getInstance();
         this.rotationDialog = new RotationDialog(this);
@@ -291,6 +291,7 @@ public class App extends MainFrame
             }
             else if (Board.isValid(new Location(x, y))) {
                 (this.button[x][y] = new TileButton(this, x, y)).addMouseListener(new TileButtonListener(this, new Location(x, y)));
+                this.button[x][y].setBackground(Color.green);
             }
             else {
                 this.button[x][y] = new JPanel();
@@ -626,7 +627,7 @@ public class App extends MainFrame
         this.UpdateFocus();
     }
     
-    public void TilePressedAction(final Location loc) {
+    public void TilePressedAction(final Location loc) {  //UPDATES WHEN TILE IS PRESSED
         switch (this.getOverallState()) {
             case 0: {
                 if (Setup.isValid(loc)) {
@@ -714,6 +715,7 @@ public class App extends MainFrame
                 break;
             }
         }
+        this.UpdateButtons();         //updates the buttons for current selection
     }
     
     public void UpdateButtons() {
@@ -753,7 +755,7 @@ public class App extends MainFrame
                         this.getEndTurn().setEnabled(true);
                     }
                     switch (this.currentAction) {
-                        case 4: {
+                        case 4: {   // case of moving
                             if (!this.game.canMove()) {
                                 throw new IllegalArgumentException("Can't move");
                             }
@@ -769,7 +771,7 @@ public class App extends MainFrame
                             this.getEndTurn().setEnabled(true);
                             break Label_1543;
                         }
-                        case 5: {
+                        case 5: {  //case of attacking
                             if (!this.game.canAttack()) {
                                 throw new IllegalArgumentException("Can't attack");
                             }
@@ -785,7 +787,7 @@ public class App extends MainFrame
                             this.getEndTurn().setEnabled(true);
                             break Label_1543;
                         }
-                        case 6: {
+                        case 6: { //case of changing directions
                             if (this.game.canMove()) {
                                 this.getMove().setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                             }
@@ -802,6 +804,7 @@ public class App extends MainFrame
                             }
                             this.getTurn().setBorder(BorderFactory.createLineBorder(Color.YELLOW, 2));
                             this.getEndTurn().setEnabled(true);
+
                             if (this.currentSelection != null && this.currentSelection.canRotate()) {
                                 this.rotationDialog.setVisible(true);
                                 break Label_1543;

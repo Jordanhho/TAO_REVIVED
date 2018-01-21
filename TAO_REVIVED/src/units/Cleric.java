@@ -35,7 +35,7 @@ public class Cleric extends BasicUnit
     }
     
     public int maxNum() {
-        return -1;
+        return 0; //used to be -1
     }
     
     public int unitCount() {

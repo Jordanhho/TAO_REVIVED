@@ -5,36 +5,34 @@
 package effects;
 
 import java.util.Iterator;
+
 import units.Pyromancer;
 import units.DragonSpeakerMage;
 import units.DragonTyrant;
 import units.Unit;
 import units.BasicUnit;
 
-public class DragonSpeak extends Effect
-{
+public class DragonSpeak extends Effect {
     private BasicUnit unit;
-    
+
     public DragonSpeak(final BasicUnit unit) {
         super(unit);
         this.unit = unit;
     }
-    
+
     public int powerChange() {
         final Iterator<Unit> itr = this.unit.getPlayer().getBoard().iterator();
-        boolean hasDragon = false;
-        boolean hasDSM = false;
         int numPyros = 0;
+        int numDragons = 0;
+        int numDSMs = 0;
         while (itr.hasNext()) {
             final Unit u = itr.next();
             if (u.getPlayer() == this.unit.getPlayer()) {
                 if (u instanceof DragonTyrant) {
-                    hasDragon = true;
-                }
-                else if (u instanceof DragonSpeakerMage) {
-                    hasDSM = true;
-                }
-                else {
+                    numDragons++;
+                } else if (u instanceof DragonSpeakerMage) {
+                    numDSMs++;
+                } else {
                     if (!(u instanceof Pyromancer)) {
                         continue;
                     }
@@ -42,23 +40,27 @@ public class DragonSpeak extends Effect
                 }
             }
         }
-        if (!hasDragon || !hasDSM) {
+        if (numDragons == 0 || numDSMs == 0) {
             this.end();
             return 0;
         }
-        if (numPyros < 2) {
-            final int transfer = 12;
-            if (this.unit instanceof DragonTyrant) {
-                return -transfer * (numPyros + 1);
-            }
-            return transfer;
-        }
-        else {
-            final int transfer = (int)Math.round(28.0 / (numPyros + 1));
+
+        int numSharedUsers = numPyros + numDSMs;
+        int numPowerToShare = numSharedUsers * numDragons * 12;
+        int totalDragonPower = numDragons * 28;
+
+        if (numPowerToShare > totalDragonPower) { //distribute total dragon power to all pyro and dsm
+            int numPowerToDistribute = (int) Math.ceil((float) totalDragonPower / (float) numSharedUsers);
             if (this.unit instanceof DragonTyrant) {
                 return -28;
             }
-            return transfer;
+            return numPowerToDistribute;
+        } else { //otherwise distribute numPowertoGrab
+            int numPowerToDistribute = (int) Math.ceil((float) numPowerToShare / (float) numSharedUsers);
+            if (this.unit instanceof DragonTyrant) {
+                return -12 * numSharedUsers;
+            }
+            return numPowerToDistribute;
         }
     }
 }
