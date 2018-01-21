@@ -72,7 +72,7 @@ public class StoneGolem extends BasicUnit
     }
     
     public int maxNum() {
-        return 1;
+        return 0;
     }
     
     public String toAbrev() {
