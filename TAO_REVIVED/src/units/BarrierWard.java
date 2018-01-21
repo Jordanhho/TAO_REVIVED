@@ -40,17 +40,13 @@ public class BarrierWard extends BasicUnit
     }
     
     protected boolean canattack(final Location loc) {
-        //&& this.getPlayer().getBoard().unitAt(loc).baseStats().getName().equals("Shrub")
-        if(this.getPlayer().getBoard().unitAt(loc) == null) {
-            //System.out.println("not a unit, do not attack!");
-            //System.out.println("THIS IS A SHRUB, DO NOT ATTK!");
+        if(this.getPlayer().getBoard().unitAt(loc) == null) { //prevents attack on empty tiles
             return false;
         }
-        else if(this.getPlayer().getBoard().unitAt(loc) != null && this.getPlayer().getBoard().unitAt(loc).baseStats().getName().equals("Shrub")) {
-            //System.out.println("this is a shrub do not attk!");
+        else if(this.getPlayer().getBoard().unitAt(loc) != null && this.getPlayer().getBoard().unitAt(loc).baseStats().getName().equals("Shrub")) { //prevents attacks on shrubs
             return false;
         }
-        else {
+        else { //attack unit
             return Board.distance(loc, this.location()) <= 6;
         }
     }
