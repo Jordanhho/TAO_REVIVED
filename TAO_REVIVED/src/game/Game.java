@@ -210,6 +210,10 @@ public class Game
             this.NextTurn();
         }
         this.actions = this.actions.Add(action);
+        System.out.println("PRINTING OUT ACTION TREE!");
+        System.out.println("-----------------------------------------\n");
+        System.out.println(actions.toString());
+        System.out.println("\n-----------------------------------------");
     }
     
     public boolean hasMoves(final BasicUnit unit) {
