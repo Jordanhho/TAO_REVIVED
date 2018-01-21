@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TAOGameRecorder">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TAOGameRecorder.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
