@@ -5,16 +5,15 @@
 package game;
 
 import units.BasicUnit;
-import java.util.Set;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+
+import java.util.*;
+
 import util.Location;
-import java.util.HashMap;
 
 public class Setup
 {
-    private HashMap<Location, Character> map;
-    
+    private Map<Location, Character> map = new HashMap<Location, Character>(); //used to use Hashmap object, now use Map
+
     public Setup(final boolean defaultSetup) {
         this.map = new HashMap<Location, Character>();
         if (defaultSetup) {
@@ -32,6 +31,7 @@ public class Setup
     }
     
     public void add(final Location loc, final Character unit) {
+
         this.map.put(loc, unit);
     }
     
@@ -111,14 +111,10 @@ public class Setup
     }
     
     public String toString() {
-        final Iterator itr = this.map.keySet().iterator();
-        String string = "";
-        while (itr.hasNext()) {
-            //final Location loc = new Location());
-            //final char unit = this.map.get(loc);
-            //string = String.valueOf(string) + (char)(loc.getX() + 48) + (char)(loc.getY() + 48) + unit;
-           // itr.next();
+        StringBuilder s = new StringBuilder("");
+        for(Map.Entry<Location, Character> setupUnit : map.entrySet()) { //loops through the hashmap
+            s.append(setupUnit.getKey().getX()).append(setupUnit.getKey().getY()).append(setupUnit.getValue().toString()); //appends each unit to player's list of unit
         }
-        return string;
+        return s.toString();
     }
 }
