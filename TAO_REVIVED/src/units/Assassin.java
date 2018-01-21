@@ -53,8 +53,13 @@ public class Assassin extends BasicUnit
             for (final Location x : list) {
                 final Unit unit = this.getPlayer().getBoard().unitAt(x);
                 if (unit != null) {
-                    final BasicUnit target = (BasicUnit)unit;
-                    target.attacked(99);
+                    if(!unit.baseStats().getName().equals("Shrub")) {
+                        final BasicUnit target = (BasicUnit)unit;
+                        target.attacked(9001);
+                    }
+                    else { //when attacking a shrub
+                        unit.attacked(1);
+                    }
                     this.die();
                 }
             }
