@@ -1,7 +1,3 @@
-// 
-// Decompiled by Procyon v0.5.30
-// 
-
 package util;
 
 public class Location
@@ -21,12 +17,17 @@ public class Location
     public int getY() {
         return this.y;
     }
-    
+
     public boolean equals(final Object obj) {
         final Location other = (Location)obj;
         return other.x == this.x && other.y == this.y;
     }
-    
+
+    public void setLocation(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public String toString() {
         return "(" + this.x + "," + this.y + ")";
     }

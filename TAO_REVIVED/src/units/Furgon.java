@@ -7,10 +7,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import util.Location;
 
-
-
-
-
 public class Furgon
         extends BasicUnit
 {
@@ -23,7 +19,6 @@ public class Furgon
         super(new BaseStats("Furgon", 48, 0, 0, 50, 1, 3, true, false), owner, loc);
     }
 
-
     public ArrayList<Location> affectedByAttack(Location loc)
     {
         ArrayList<Location> list = new ArrayList();
@@ -35,8 +30,6 @@ public class Furgon
         Location f3 = new Location(location().getX(), location().getY() + 1);
         Location f4 = new Location(location().getX(), location().getY() - 1);
 
-
-
         boolean enraged = baseStats() == ENRAGED;
 
         boolean surrounded = false;
@@ -44,7 +37,6 @@ public class Furgon
         Board b = getPlayer().getBoard();
         if (enraged)
         {
-
             surrounded = (Board.isValid(f1)) &&
                     (Board.isValid(f2)) &&
                     (Board.isValid(f3)) &&
