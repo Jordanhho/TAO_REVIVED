@@ -247,14 +247,7 @@ public class App extends MainFrame
         this.currentFile = null;
         this.initialize();
     }
-    /*
-    1 press down
-    -1 go up
-    4 move
-    5 attack
-    6 turn
 
-     */
     private void initialize() {
         this.iManager = ImageManager.getInstance();
         this.rotationDialog = new RotationDialog(this);
