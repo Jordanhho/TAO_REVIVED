@@ -5,6 +5,8 @@
 package game;
 
 import java.util.Set;
+
+import units.DragonSpeakerMage;
 import util.Direction;
 import util.ImageManager;
 import units.BasicUnit;
@@ -18,7 +20,12 @@ public class Board
     private ArrayList<Unit> units;
     private Player player1;
     private Player player2;
-    
+    private boolean dragonSpeakInit = false;
+
+    public boolean isDragonSpeakInit() {
+        return dragonSpeakInit;
+    }
+
     public Iterator<Unit> iterator() {
         return this.units.iterator();
     }
@@ -46,8 +53,12 @@ public class Board
             this.units.add(unit);
         }
         for (final Unit u : this.units) {
-            if (u instanceof BasicUnit) {
+            if(!(u instanceof DragonSpeakerMage)) {
                 ((BasicUnit)u).init();
+            }
+            if(!dragonSpeakInit && u instanceof DragonSpeakerMage) {
+                ((BasicUnit)u).init();
+                dragonSpeakInit = true;
             }
         }
         for (final Unit u : this.units) {
@@ -81,8 +92,10 @@ public class Board
         }
         for (final Unit u : this.units) {
             if (u instanceof BasicUnit) {
-                ((BasicUnit)u).init();
-            }
+                if(!(u instanceof DragonSpeakerMage)) {
+                    ((BasicUnit)u).init();
+                }
+          }
         }
         for (final Unit u : this.units) {
             if (u instanceof BasicUnit) {

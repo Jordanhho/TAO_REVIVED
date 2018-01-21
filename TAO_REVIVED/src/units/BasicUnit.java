@@ -178,7 +178,12 @@ public abstract class BasicUnit implements Unit
         for (final Effect e : this.effects) {
             armor += e.armorChange();
         }
-        return armor;
+        if(armor > 99) {
+            return 99;
+        }
+        else {
+            return armor;
+        }
     }
     
     public int power() {
