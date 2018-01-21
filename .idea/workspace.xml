@@ -2,94 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec184b64-a0d1-4f58-a5e9-5b7a55e96298" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TAOGameRecorder.jar" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/actions/Action.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/actions/ActionTreeNode.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/actions/Attack.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/actions/EndTurn.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/actions/Move.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/actions/Turn.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/App.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/Driver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/DumpToTextDialog$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/DumpToTextDialog.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/Editor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/EditorFrame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/LoadFromTextDialog$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/LoadFromTextDialog.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/MainFrame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/MoveCounter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/RotationDialog.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/app/TileButton.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/effects/Barrier.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/effects/DragonSpeak.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/effects/Effect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/effects/Focus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/effects/Paralyze.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/effects/Poison.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/effects/Stoned.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/game/BlockingInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/game/Board.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/game/Game.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/game/Player.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/game/Setup.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/AboutButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/ActionButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/AddVariationButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/BackButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/ClearBoardButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/DumpToTextButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/EditorButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/EndTurnListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/ForwardButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/KeyListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/LoadFromTextButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/NewGameButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/OpenGameListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/OpenSetupListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/SaveAsButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/SaveButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/SaveSetupListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/ShortcutButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/SliderListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/StartGameButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/TextBoxListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/TileButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/TurnButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/UndoButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/VariationButtonListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/listeners/WindowActionListener.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Assassin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/BarrierWard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/BaseStats.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/BasicUnit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/BeastRider.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Berserker.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Cleric.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/DarkMagicWitch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/DragonSpeakerMage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/DragonTyrant.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Enchantress.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/FrostGolem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Furgon.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/GolemAmbusher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Knight.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/LightningWard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/MudGolem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/PoisonWisp.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Pyromancer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Scout.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Shrub.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/StoneGolem.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/units/Unit.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/util/Direction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/util/ImageManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/util/Location.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/util/TAOGameFileFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_REVIVED/util/TAOSetupFileFilter.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TAO_REVIVED/TAO_REVIVED.iml" afterPath="$PROJECT_DIR$/TAO_REVIVED/TAO_REVIVED.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/artifacts/TAO_RETRY_jar/TAO_Recompiled.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/artifacts/TAO_RETRY_jar/TAO_Recompiled.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/actions/Action.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/actions/ActionTreeNode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/actions/Attack.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/actions/EndTurn.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/actions/Move.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/actions/Turn.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/App.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/Driver.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/DumpToTextDialog$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/DumpToTextDialog.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/Editor.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/EditorFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/LoadFromTextDialog$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/LoadFromTextDialog.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/MainFrame.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/MoveCounter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/RotationDialog.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/app/TileButton.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/effects/Barrier.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/effects/DragonSpeak.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/effects/Effect.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/effects/Focus.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/effects/Paralyze.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/effects/Poison.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/effects/Stoned.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/game/BlockingInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/game/Board.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/game/Game.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/game/Player.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/game/Setup.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/AboutButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/ActionButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/AddVariationButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/BackButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/ClearBoardButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/DumpToTextButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/EditorButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/EndTurnListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/ForwardButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/KeyListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/LoadFromTextButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/NewGameButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/OpenGameListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/OpenSetupListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/SaveAsButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/SaveButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/SaveSetupListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/ShortcutButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/SliderListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/StartGameButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/TextBoxListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/TileButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/TurnButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/UndoButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/VariationButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/listeners/WindowActionListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Assassin.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/BarrierWard.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/BaseStats.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/BasicUnit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/BeastRider.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Berserker.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Cleric.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/DarkMagicWitch.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/DragonSpeakerMage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/DragonTyrant.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Enchantress.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/FrostGolem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Furgon.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/GolemAmbusher.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Knight.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/LightningWard.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/MudGolem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/PoisonWisp.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Pyromancer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Scout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Shrub.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/StoneGolem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/units/Unit.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/util/Direction.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/util/ImageManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/util/Location.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/util/TAOGameFileFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TAO_REVIVED/out/production/TAO_RETRY/util/TAOSetupFileFilter.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -125,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -184,19 +184,6 @@
               <item name="TAO_REVIVED" type="b2602c69:ProjectViewProjectNode" />
               <item name="TAO_REVIVED" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TAO_REVIVED" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAO_REVIVED" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TAO_REVIVED" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TAO_REVIVED" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="TAO_RETRY" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TAO_REVIVED" type="b2602c69:ProjectViewProjectNode" />
@@ -444,7 +431,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
           <folding />
         </state>
       </provider>
