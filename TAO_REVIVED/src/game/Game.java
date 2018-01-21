@@ -210,11 +210,7 @@ public class Game
             this.NextTurn();
         }
         this.actions = this.actions.Add(action);
-        System.out.println("PRINTING OUT ACTION TREE!");
-        System.out.println("-----------------------------------------\n");
-        System.out.println(actions.toString());
-        System.out.println("\n-----------------------------------------");
-    }
+}
     
     public boolean hasMoves(final BasicUnit unit) {
         if (!this.canMove) {
@@ -294,9 +290,9 @@ public class Game
         else {
             first = 0;
         }
-        String s = new StringBuilder().append(this.player1).append('\n').append(this.player2).append('\n').append(first).append('\n').toString();
-        s = String.valueOf(s) + this.actions.getRoot().toString();
-        return s;
+        //builds save file string!
+        StringBuilder sb = new StringBuilder().append(this.player1.toString()).append("\n").append(this.player2.toString()).append("\n").append(first).append("\n").append(this.actions.getRoot().toString());
+        return sb.toString();
     }
     
     public String dumpToText() {

@@ -43,6 +43,6 @@ public class Player
     }
     
     public String toString() {
-        return String.valueOf(this.ID) + '\n' + this.setup;
+        return "" + this.ID + "\n" + this.setup.toString(); //builds player profile string
     }
 }
