@@ -498,6 +498,7 @@ public class MainFrame extends JFrame
         if (this.RandomizeBlocking == null) {
             (this.RandomizeBlocking = new JCheckBoxMenuItem()).setText("Randomize Blocking");
             this.RandomizeBlocking.setMnemonic(82);
+            this.RandomizeBlocking.setSelected(true); //sets default randomized blocking as On
         }
         return this.RandomizeBlocking;
     }

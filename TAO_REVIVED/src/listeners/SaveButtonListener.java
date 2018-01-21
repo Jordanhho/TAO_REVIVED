@@ -44,6 +44,7 @@ public class SaveButtonListener implements ActionListener
         }
         final File file = app.getFile();
         if (file.exists()) {
+
             file.delete();
         }
         try {

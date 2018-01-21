@@ -164,6 +164,7 @@ public class Furgon
                     ((b.unitAt(f3) instanceof Shrub)) &&
                     ((b.unitAt(f4) instanceof Shrub));
         }
+
         if (surrounded)
             return location().equals(loc);
         if (Board.distance(loc, location()) <= 2)
@@ -217,7 +218,7 @@ public class Furgon
 
     public int maxNum()
     {
-        return 1;
+        return 0;
     }
 
     public String toAbrev()

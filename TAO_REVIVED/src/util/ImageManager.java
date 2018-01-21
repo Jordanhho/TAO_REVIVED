@@ -1,5 +1,6 @@
 package util;
 
+import java.awt.image.ImageProducer;
 import java.util.Iterator;
 import effects.Paralyze;
 import effects.Poison;
@@ -230,6 +231,7 @@ public class ImageManager
 
     public BufferedImage getImage(final char unit, final boolean player1, final Direction dir, final float hp, final Set<Effect> effects) {
         final BufferedImage unscaled = this.getImage(unit, player1, dir);
+
         BufferedImage image;
         if (!this.mapOthers.containsKey(unit)) {
             if (player1) {
@@ -260,9 +262,16 @@ public class ImageManager
                 for (int r = (unscaled.getWidth() - realHPBarWidth) / 2, x = 0; x < 2 * r; ++x) {
                     for (int y = 0; y < 2 * r; ++y) {
                         if (Math.abs(x * x + y * y + r * r - 2 * (x + y) * r + barrierWidth) < barrierWidth) {
-                            if(findUnitName(unit).equals("furgon")) {
-                                //TODO temporary bug fix for just ignoring barrier on furgons
-                                //unscaled.setRGB(test_X + hpBar, test_Y, ImageManager.barrierColor);
+                            if(findUnitName(unit).equals("furgon")) { //74x69 pixels furgon
+                                int tempX = x;   //clamps x and y to unscaled max height and width
+                                int tempY = y;
+                                if(x > unscaled.getWidth() - 1) {
+                                    tempX = unscaled.getWidth() - 1;
+                                }
+                                if(y > unscaled.getHeight() - 1) {
+                                    tempY = unscaled.getHeight() - 1;
+                                }
+                                unscaled.setRGB(tempX + realHPBarWidth, tempY, ImageManager.barrierColor);
                             }
                             else {
                                 unscaled.setRGB(x + realHPBarWidth, y, ImageManager.barrierColor);

@@ -87,7 +87,7 @@ public class Scout extends BasicUnit
     }
     
     public int maxNum() {
-        return 2;
+        return 0;
     }
     
     public int unitCount() {

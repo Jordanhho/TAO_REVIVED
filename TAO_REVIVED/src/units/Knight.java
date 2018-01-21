@@ -21,7 +21,7 @@ public class Knight extends BasicUnit
     }
     
     public int maxNum() {
-        return 3;
+        return 0;
     }
     
     protected void attack(final Location loc, final BlockingInfo info) {
