@@ -775,7 +775,7 @@ public class App extends MainFrame
                             if (this.game.canMove()) {
                                 this.getMove().setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
                             }
-                            if (!this.game.canAttack()) {
+                            if (!this.game.canAttack()) {  //used to be flipped with move above
                                 throw new IllegalArgumentException("Can't attack");
                             }
                             else {

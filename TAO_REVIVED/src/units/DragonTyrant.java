@@ -51,10 +51,13 @@ public class DragonTyrant extends BasicUnit
     protected void attack(final Location loc, final BlockingInfo info) {
         this.setDirection(this.getLOSdirection(loc));
         final ArrayList<Location> list = this.affectedByAttack(loc);
+        boolean firstHit = false;
         for (final Location x : list) {
             final Unit target = this.getPlayer().getBoard().unitAt(x);
-            if (target != null) {
+            if (target != null && !firstHit) {  //only allows first target to be hit, then exits loop
                 target.attacked(this.power());
+                firstHit = true;
+                break;
             }
         }
     }
