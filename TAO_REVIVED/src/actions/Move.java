@@ -1,3 +1,7 @@
+// 
+// Decompiled by Procyon v0.5.30
+// 
+
 package actions;
 
 import app.App;
@@ -23,13 +27,12 @@ public class Move implements Action
         return unit != null && unit instanceof BasicUnit && ((BasicUnit)unit).canMove(this.destination);
     }
     
-    public boolean act(final App app) {
+    public void act(final App app) {
         if (!this.isValid()) {
             throw new IllegalArgumentException("Can't perform invalid action");
         }
         final BasicUnit unit = (BasicUnit)this.theBoard.unitAt(this.loc);
         unit.Move(this.destination);
-        return false;
     }
     
     public boolean endsTurn() {

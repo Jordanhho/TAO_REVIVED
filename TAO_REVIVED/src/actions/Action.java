@@ -1,3 +1,7 @@
+// 
+// Decompiled by Procyon v0.5.30
+// 
+
 package actions;
 
 import units.BasicUnit;
@@ -5,7 +9,7 @@ import app.App;
 
 public interface Action
 {
-    boolean act(final App p0);
+    void act(final App p0);
     
     boolean endsTurn();
     

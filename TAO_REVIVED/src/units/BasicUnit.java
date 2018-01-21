@@ -1,3 +1,7 @@
+// 
+// Decompiled by Procyon v0.5.30
+// 
+
 package units;
 
 import effects.Barrier;
@@ -14,9 +18,6 @@ import java.util.ArrayList;
 import util.Direction;
 import util.Location;
 import game.Player;
-
-
-import javax.swing.*;
 
 public abstract class BasicUnit implements Unit
 {
@@ -577,7 +578,7 @@ public abstract class BasicUnit implements Unit
     
     protected abstract boolean canattack(final Location p0);
     
-    public final boolean Attack(final Location loc, final BlockingInfo blockingInfo) {
+    public final void Attack(final Location loc, final BlockingInfo blockingInfo) {
 
         final Unit unit = this.getPlayer().getBoard().unitAt(loc);
 
@@ -587,31 +588,12 @@ public abstract class BasicUnit implements Unit
         if (!this.canAttack(loc)) {
             throw new IllegalStateException("Cannot attack location " + loc);
         }
-        //if(!this.checkBlockingInfo(loc, blockingInfo)) { //checks if you want to block or not
-            for (final Effect e : this.effects) {
-                e.onAttack();
-                return true;
-            }
-       // }
-       // System.out.println("Cancelled Attack");
-        return false;
-    }
-
-    public boolean checkBlockingInfo(final Location loc, final BlockingInfo info) {  //popups with if you want to attack or not
-        final Unit target = this.getPlayer().getBoard().unitAt(loc);
-
-        double blockingPercent = getTargetBlockingInfo(target.baseStats().power, loc, info);
-
-        boolean wishToAttack = info.showAttackBlockingInfo(blockingPercent, loc);
-
-        if(wishToAttack) {
-            this.attack(loc, info);
-            return true;
-        } else {
-            return false;
+        this.attack(loc, blockingInfo);
+        for (final Effect e : this.effects) {
+            e.onAttack();
         }
     }
-
+    
     protected abstract void attack(final Location p0, final BlockingInfo p1);
     
     protected void die() {
@@ -807,59 +789,7 @@ public abstract class BasicUnit implements Unit
         }
         return true;
     }
-
-    public double getTargetBlockingInfo(final int power, final Location by, final BlockingInfo info) {
-        final int dx = by.getX() - this.loc.getX();
-        final int dy = by.getY() - this.loc.getY();
-        Direction dir;
-        if (Math.abs(dx) != Math.abs(dy)) {
-            if (dx > 0 && dx > Math.abs(dy)) {
-                dir = Direction.NORTH;
-            }
-            else if (dx < 0 && -dx > Math.abs(dy)) {
-                dir = Direction.SOUTH;
-            }
-            else if (dy > 0) {
-                dir = Direction.EAST;
-            }
-            else {
-                dir = Direction.WEST;
-            }
-        }
-        else if (dx > 0 && (this.dir.equals(Direction.NORTH) || this.dir.equals(Direction.SOUTH))) {
-            dir = Direction.NORTH;
-        }
-        else if (dx < 0 && (this.dir.equals(Direction.NORTH) || this.dir.equals(Direction.SOUTH))) {
-            dir = Direction.SOUTH;
-        }
-        else if (dy > 0 && (this.dir.equals(Direction.EAST) || this.dir.equals(Direction.WEST))) {
-            dir = Direction.EAST;
-        }
-        else {
-            if (dy >= 0 || (!this.dir.equals(Direction.EAST) && !this.dir.equals(Direction.WEST))) {
-                System.out.println("dir is: " + this.dir.toString());
-                throw new IllegalStateException();
-            }
-            dir = Direction.WEST;
-        }
-        double blocking;
-        if (this.dir.equals(dir) || !this.mobile()) {
-            blocking = this.stats.blocking + this.blockingBonus;
-        }
-        else if (this.dir.equals(dir.rotateHalfTurn())) {
-            blocking = 0.0;
-        }
-        else {
-            blocking = (this.stats.blocking + this.blockingBonus) / 2.0;
-        }
-        for (final Effect e2 : this.effects) {
-            if (e2.stopsBlocking()) {
-                blocking = 0.0;
-            }
-        }
-        return blocking;
-    }
-
+    
     public abstract int unitCount();
     
     public abstract int maxNum();

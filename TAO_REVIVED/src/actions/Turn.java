@@ -1,3 +1,7 @@
+// 
+// Decompiled by Procyon v0.5.30
+// 
+
 package actions;
 
 import app.App;
@@ -24,12 +28,11 @@ public class Turn implements Action
         return unit != null && unit instanceof BasicUnit && ((BasicUnit)unit).canRotate();
     }
     
-    public boolean act(final App app) {
+    public void act(final App app) {
         if (!this.unit().canRotate()) {
             throw new IllegalArgumentException("Can't rotate");
         }
         this.unit().Rotate(this.direction);
-        return false;
     }
     
     public boolean endsTurn() {

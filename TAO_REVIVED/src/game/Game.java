@@ -1,3 +1,7 @@
+// 
+// Decompiled by Procyon v0.5.30
+// 
+
 package game;
 
 import actions.Turn;
@@ -184,39 +188,29 @@ public class Game
     }
     
     public void Play(final Action action) {
-        //Cancceled : { //goes back to this line if cancelled block
-//            System.out.println("new action");
-            if (!this.canPlay(action)) {
-                throw new IllegalArgumentException("Illegal action: " + action);
+        if (!this.canPlay(action)) {
+            throw new IllegalArgumentException("Illegal action: " + action);
+        }
+        if (action.unit() != null) {
+            this.acting = action.unit();
+        }
+        action.act(this.app);
+        if (action.isMove()) {
+            this.canMove = false;
+        }
+        if (action.isAttack()) {
+            this.canAttack = false;
+        }
+        for (final Unit next : this.theBoard.getUnits()) {
+            if (next instanceof BasicUnit) {
+                ((BasicUnit)next).onEndRound();
             }
-            if (action.unit() != null) {
-                this.acting = action.unit();
-            }
-            boolean cancelled = action.act(this.app);
-
-//            if(cancelled) { //cancel move
-//                System.out.println("canceled attack, going back up!");
-//                break Cancceled;
-//            }
-
-            if (action.isMove()) {
-                this.canMove = false;
-            }
-            if (action.isAttack()) {
-                this.canAttack = false;
-            }
-            for (final Unit next : this.theBoard.getUnits()) {
-                if (next instanceof BasicUnit) {
-                    ((BasicUnit)next).onEndRound();
-                }
-            }
-            if (action.endsTurn()) {
-                this.NextTurn();
-            }
-            this.actions = this.actions.Add(action);
-      //  }
-
-    }
+        }
+        if (action.endsTurn()) {
+            this.NextTurn();
+        }
+        this.actions = this.actions.Add(action);
+}
     
     public boolean hasMoves(final BasicUnit unit) {
         if (!this.canMove) {
