@@ -576,7 +576,6 @@ public abstract class BasicUnit implements Unit
     public final void Attack(final Location loc, final BlockingInfo blockingInfo) {
 
         final Unit unit = this.getPlayer().getBoard().unitAt(loc);
-        //System.out.println("unit name: " + unit.baseStats().getName());
 
         if (!this.canAttack()) {
             throw new IllegalStateException("Cannot attack");
