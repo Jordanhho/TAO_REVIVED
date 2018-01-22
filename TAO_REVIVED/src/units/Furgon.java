@@ -62,8 +62,7 @@ public class Furgon
             {
                 Unit next = (Unit)itr.next();
                 if (((next instanceof BasicUnit)) &&
-                        (((BasicUnit)next).getPlayer() != getPlayer()) &&
-                        (((BasicUnit)next).mobile()))
+                        (((BasicUnit)next).getPlayer() != getPlayer()))
                 {
                     Location center = next.location();
                     Location y1 = new Location(center.getX() + 1, center.getY());
