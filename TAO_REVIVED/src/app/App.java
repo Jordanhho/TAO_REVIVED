@@ -772,11 +772,11 @@ public class App extends MainFrame
                             break Label_1543;
                         }
                         case 5: {  //case of attacking
+                            if (!this.game.canAttack()) {
+                                throw new IllegalArgumentException("Can't attack");
+                            }
                             if (this.game.canMove()) {
                                 this.getMove().setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-                            }
-                            if (!this.game.canAttack()) {  //used to be flipped with move above
-                                throw new IllegalArgumentException("Can't attack");
                             }
                             else {
                                 this.getMove().setEnabled(false);
