@@ -263,7 +263,7 @@ public class Furgon
     }
 
     private void removeFocusEffectsOnEnraged() { //TODO remove effect on source focuser
-        this.getEffects();
+        //this.getEffects();
 //        for(Effect e: this.getEffects()) {
 //            if(e instanceof Paralyze || e instanceof  Poison || e instanceof  Barrier) {
 //                this.removeEffect(e);
