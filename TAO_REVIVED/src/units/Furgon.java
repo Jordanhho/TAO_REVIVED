@@ -52,14 +52,16 @@ public class Furgon
         Board b = getPlayer().getBoard();
         if (enraged)
         {
-            surrounded = (Board.isValid(f1)) &&
-                    (Board.isValid(f2)) &&
-                    (Board.isValid(f3)) &&
-                    (Board.isValid(f4)) &&
-                    ((b.unitAt(f1) instanceof Shrub)) &&
-                    ((b.unitAt(f2) instanceof Shrub)) &&
-                    ((b.unitAt(f3) instanceof Shrub)) &&
-                    ((b.unitAt(f4) instanceof Shrub));
+
+            surrounded = isSurrounded(b, f1, f2, f3, f4);
+//            surrounded = (Board.isValid(f1)) &&
+//                    (Board.isValid(f2)) &&
+//                    (Board.isValid(f3)) &&
+//                    (Board.isValid(f4)) &&
+//                    ((b.unitAt(f1) instanceof Shrub)) &&
+//                    ((b.unitAt(f2) instanceof Shrub)) &&
+//                    ((b.unitAt(f3) instanceof Shrub)) &&
+//                    ((b.unitAt(f4) instanceof Shrub));
         }
         if (surrounded)
         {
@@ -68,8 +70,7 @@ public class Furgon
             {
                 Unit next = (Unit)itr.next();
                 if (((next instanceof BasicUnit)) &&
-                        (((BasicUnit)next).getPlayer() != getPlayer()) &&
-                        (((BasicUnit)next).mobile()))
+                        (((BasicUnit)next).getPlayer() != getPlayer())) //only put shrubs around enemy units
                 {
                     Location center = next.location();
                     Location y1 = new Location(center.getX() + 1, center.getY());
@@ -216,6 +217,8 @@ public class Furgon
         boolean surrounded = false;
 
         Board b = getPlayer().getBoard();
+
+        ArrayList<Location> list = new ArrayList();
         if (enraged)
         {
             surrounded = isSurrounded(b, f1, f2, f3, f4);
@@ -234,7 +237,6 @@ public class Furgon
             return location().equals(loc);
         if (Board.distance(loc, location()) <= 2)
         {
-            ArrayList<Location> list = new ArrayList();
 
             int x = loc.getX();
             int y = loc.getY();
@@ -257,18 +259,17 @@ public class Furgon
             }
             return !list.isEmpty();
         }
-
         return false;
     }
 
-    private void removeFocusEffectsOnEnraged() {
-        for(Effect e: this.getEffects()) {
-            if(e instanceof Paralyze || e instanceof  Poison || e instanceof  Barrier) {
-                this.removeEffect(e);
-            }
-        }
+    private void removeFocusEffectsOnEnraged() { //TODO remove effect on source focuser
+        this.getEffects();
+//        for(Effect e: this.getEffects()) {
+//            if(e instanceof Paralyze || e instanceof  Poison || e instanceof  Barrier) {
+//                this.removeEffect(e);
+//            }
+//        }
     }
-
 
     public void onEndTurn(Player p)
     {

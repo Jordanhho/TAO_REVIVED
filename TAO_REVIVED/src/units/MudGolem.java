@@ -49,7 +49,18 @@ public class MudGolem extends BasicUnit
             for (final Location x : list) {
                 final Unit unit = this.getPlayer().getBoard().unitAt(x);
                 if (unit != null && !(unit instanceof PoisonWisp)) {
-                    unit.attacked(20 - 5 * Board.distance(loc, x));
+                    int attackPower = 20;
+                    if(Board.distance(loc, x) == 1) {
+                        attackPower= 15;
+                    }
+                    else if(Board.distance(loc, x) == 2) {
+                        attackPower = 5;
+                    }
+                    else if(Board.distance(loc, x) == 3) {
+                        attackPower = 1;
+                    }
+                    //unit.attacked(20 - 5 * Board.distance(loc, x));
+                    unit.attacked(attackPower);
                 }
             }
         }
