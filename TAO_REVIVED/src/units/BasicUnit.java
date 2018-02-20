@@ -882,7 +882,23 @@ public abstract class BasicUnit implements Unit
         }
         return output;
     }
-    
+
+
+    public void dispelAllEffects() {
+        //ends all effects
+        for(Effect e: effects) {
+            e.end();
+        }
+        //end all effect Queue
+        for(Effect eq: effectQueue) {
+            eq.end();
+        }
+
+        // clear both arrays
+        effects.clear();
+        effectQueue.clear();
+    }
+
     public boolean isOnlyOnField() {
         for (final Unit u : this.getPlayer().getBoard().getUnits()) {
             if (u.getClass() == this.getClass() && u.getPlayer() == this.getPlayer() && u != this) {

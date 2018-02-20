@@ -14,7 +14,7 @@ public class GolemAmbusher extends BasicUnit
 {
     public GolemAmbusher(final Player owner, final Location loc) {
         // super(new BaseStats("Golem Ambusher", 60, 20, 0, 0, 3, 2, true, false), owner, loc); default stats
-        super(new BaseStats("Golem Ambusher", 60, 20, 0, 0, 2, 2, true, false), owner, loc);
+        super(new BaseStats("Golem Ambusher", 60, 20, 0, 0, 3, 2, true, false), owner, loc);
     }
     
     public ArrayList<Location> affectedByAttack(final Location loc) {

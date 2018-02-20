@@ -52,16 +52,7 @@ public class Furgon
         Board b = getPlayer().getBoard();
         if (enraged)
         {
-
             surrounded = isSurrounded(b, f1, f2, f3, f4);
-//            surrounded = (Board.isValid(f1)) &&
-//                    (Board.isValid(f2)) &&
-//                    (Board.isValid(f3)) &&
-//                    (Board.isValid(f4)) &&
-//                    ((b.unitAt(f1) instanceof Shrub)) &&
-//                    ((b.unitAt(f2) instanceof Shrub)) &&
-//                    ((b.unitAt(f3) instanceof Shrub)) &&
-//                    ((b.unitAt(f4) instanceof Shrub));
         }
         if (surrounded)
         {
@@ -190,15 +181,6 @@ public class Furgon
         if (enraged)
         {
             surrounded = isSurrounded(b, f1, f2, f3, f4);
-
-//            surrounded = (Board.isValid(f1)) &&
-//                    (Board.isValid(f2)) &&
-//                    (Board.isValid(f3)) &&
-//                    (Board.isValid(f4)) &&
-//                    ((b.unitAt(f1) instanceof Shrub)) &&
-//                    ((b.unitAt(f2) instanceof Shrub)) &&
-//                    ((b.unitAt(f3) instanceof Shrub)) &&
-//                    ((b.unitAt(f4) instanceof Shrub));
         }
         if (surrounded)
         {
@@ -222,15 +204,6 @@ public class Furgon
         if (enraged)
         {
             surrounded = isSurrounded(b, f1, f2, f3, f4);
-
-//            surrounded = (Board.isValid(f1)) &&
-//                    (Board.isValid(f2)) &&
-//                    (Board.isValid(f3)) &&
-//                    (Board.isValid(f4)) &&
-//                    ((b.unitAt(f1) instanceof Shrub)) &&
-//                    ((b.unitAt(f2) instanceof Shrub)) &&
-//                    ((b.unitAt(f3) instanceof Shrub)) &&
-//                    ((b.unitAt(f4) instanceof Shrub));
         }
 
         if (surrounded)
@@ -263,12 +236,7 @@ public class Furgon
     }
 
     private void removeFocusEffectsOnEnraged() { //TODO remove effect on source focuser
-        //this.getEffects();
-//        for(Effect e: this.getEffects()) {
-//            if(e instanceof Paralyze || e instanceof  Poison || e instanceof  Barrier) {
-//                this.removeEffect(e);
-//            }
-//        }
+        this.dispelAllEffects();
     }
 
     public void onEndTurn(Player p)
